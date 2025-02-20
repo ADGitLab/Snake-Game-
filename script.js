@@ -14,12 +14,15 @@ if (tileCount > 20) tileCount = 30; // Limit width on larger screens
 
 canvas.width = tileCount * gridSize;
 canvas.height = canvas.width; // Make it square
-if (window.innerWidth < 600) {
+if (window.innerWidth < 600 && window.innerWidth > 381) {
   tileCount = 20;
   canvas.height = tileCount * 40;
 } else if (window.innerWidth < 1000 && window.innerWidth > 610) {
   tileCount = 30;
   canvas.height = tileCount * 27;
+} else if (window.innerWidth < 380) {
+  tileCount = 20;
+  canvas.height = tileCount * 31;
 }
 
 let snake = [
